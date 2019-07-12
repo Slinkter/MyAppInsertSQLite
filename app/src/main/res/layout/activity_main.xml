@@ -10,52 +10,28 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="Nombre" />
-
-    <EditText
-        android:id="@+id/idnombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="Apellido" />
-
-    <EditText
-        android:id="@+id/idapellido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Registrar" />
 
     <Button
         android:id="@+id/btnConsultarMain"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Consultar" />
 
     <Button
-        android:id="@+id/btnspinner"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnSpinner"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:text="Spinner" />
 
     <Button
         android:id="@+id/btnListView"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="ListView" />
 
