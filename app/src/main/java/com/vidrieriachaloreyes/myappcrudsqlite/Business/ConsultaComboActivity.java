@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,8 +45,31 @@ public class ConsultaComboActivity extends AppCompatActivity {
 
         consultarListaPersonas();
 
-        ArrayAdapter<CharSequence> adapter =  new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,listaPersonas);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, listaPersonas);
         comboPersonas.setAdapter(adapter);
+
+        comboPersonas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                if (position != 0) {
+                    txtDocumento.setText(personasList.get(position - 1).getId().toString());
+                    txtNombre.setText(personasList.get(position - 1).getNombre());
+                    txtTelefono.setText(personasList.get(position - 1).getTelefono());
+                }else{
+                    txtDocumento.setText("");
+                    txtNombre.setText("");
+                    txtTelefono.setText("");
+
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
     }
@@ -61,12 +86,11 @@ public class ConsultaComboActivity extends AppCompatActivity {
             persona.setNombre(cursor.getString(1));
             persona.setTelefono(cursor.getString(2));
 
-            Log.e("id",persona.getId().toString());
-            Log.e("Nombre",persona.getNombre().toString());
-            Log.e("Tel",persona.getTelefono().toString());
+            Log.e("id", persona.getId().toString());
+            Log.e("Nombre", persona.getNombre().toString());
+            Log.e("Tel", persona.getTelefono().toString());
 
             personasList.add(persona);
-
 
 
         }
@@ -76,9 +100,9 @@ public class ConsultaComboActivity extends AppCompatActivity {
 
     private void obtenerLista() {
 
-        listaPersonas =  new ArrayList<String>();
+        listaPersonas = new ArrayList<String>();
         listaPersonas.add("Seleccione");
-        for (int i = 0 ; i<personasList.size();i++){
+        for (int i = 0; i < personasList.size(); i++) {
             listaPersonas.add(personasList.get(i).getId() + "-" + personasList.get(i).getNombre());
         }
     }

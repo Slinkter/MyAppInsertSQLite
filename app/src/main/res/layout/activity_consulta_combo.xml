@@ -8,6 +8,7 @@
     tools:context=".Business.ConsultaComboActivity">
 
     <TextView
+        android:layout_marginLeft="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -16,6 +17,7 @@
         android:textStyle="bold" />
 
     <Spinner
+        android:layout_marginLeft="20dp"
         android:id="@+id/comboPersonas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></Spinner>
@@ -24,6 +26,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp">
 
         <TextView
@@ -41,7 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:text="Nombre "
             android:textSize="15dp"
@@ -63,32 +65,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="31dp"
+
             android:layout_marginLeft="31dp"
             android:layout_toEndOf="@id/textView"
             android:layout_toRightOf="@id/textView"
             android:text="" />
 
-        <TextView
-            android:id="@+id/txtTelefono"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/textView"
-            android:layout_alignBottom="@id/textView3"
-            android:layout_alignLeft="@id/txtNombre"
-            android:layout_alignStart="@id/txtNombre"
-            android:text="" />
 
         <TextView
             android:id="@+id/txtNombre"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/textView"
-            android:layout_alignBottom="@id/textView3"
+            android:layout_alignBaseline="@id/textView2"
+            android:layout_alignBottom="@id/textView2"
+            android:layout_alignStart="@id/txtDocumento"
             android:layout_toEndOf="@id/textView2"
             android:layout_toRightOf="@id/textView2"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/txtTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/textView3"
+            android:layout_alignStart="@id/txtDocumento"
+            android:layout_alignLeft="@id/txtNombre"
+            android:layout_alignBottom="@id/textView3"
             android:text="" />
 
 
