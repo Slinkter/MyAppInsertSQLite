@@ -37,7 +37,7 @@ public class ConsultaActivity extends AppCompatActivity  {
         btnConsuta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                consultar();
+               // consultar();
                 consultarSql();
             }
         });
@@ -51,7 +51,11 @@ public class ConsultaActivity extends AppCompatActivity  {
         try {
             //select nombre telefono from usuarios where codigo =?;
             Cursor cursor = db.rawQuery("SELECT " + Utilidades.CAMPO_NOMBRE + "," +Utilidades.CAMPO_TELEFONO +
-                    "FROM" + Utilidades.TABLA_USUARIO + "WHERE" + Utilidades.CAMPO_ID+"=?" ,parametros);
+                    " FROM " + Utilidades.TABLA_USUARIO + " WHERE " + Utilidades.CAMPO_ID+" = ?" ,parametros);
+
+            cursor.moveToFirst();
+            campoNombre.setText(cursor.getString(0));
+            campoTelefono.setText(cursor.getString(1));
 
 
         }catch (Exception e){
