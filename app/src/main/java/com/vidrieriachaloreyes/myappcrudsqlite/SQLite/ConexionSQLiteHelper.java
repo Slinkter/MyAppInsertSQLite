@@ -9,7 +9,7 @@ import static com.vidrieriachaloreyes.myappcrudsqlite.Business.Utilidades.tabla;
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
 
-    String drop = "DROP TABLE PERSONA";
+    String drop = "DROP TABLE usuarios";
 
     public ConexionSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -23,6 +23,6 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(drop);
-        db.execSQL(tabla);
+        onCreate(db);
     }
 }

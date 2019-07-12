@@ -4,42 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
+    android:layout_marginLeft="45dp"
+    android:layout_marginRight="45dp"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Business.RegistrerActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registro de Usuarios "
-        android:textSize="35dp"
-        android:textStyle="bold" />
+    tools:context=".Business.ConsultaActivity">
 
     <EditText
-        android:id="@+id/campoid"
+        android:id="@+id/documentoID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="id" />
+        android:hint="Documento" />
 
     <EditText
-        android:id="@+id/campoNombre"
+        android:id="@+id/campoNombreConsulta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="nombre" />
+        android:hint="Nombre" />
 
     <EditText
-        android:id="@+id/campoTelefono"
+        android:id="@+id/campoTelefonoConsulta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="telefono" />
+        android:hint="Telefono" />
+
 
     <Button
-        android:id="@+id/btnRegistraruser"
+        android:id="@+id/btnConsultar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registar Usuario"
-        android:textStyle="bold" />
+        android:text="Buscar" />
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="telefono" />
+
 
 </LinearLayout>
