@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.vidrieriachaloreyes.myappcrudsqlite.Business.ConsultaActivity;
 import com.vidrieriachaloreyes.myappcrudsqlite.Business.ConsultaComboActivity;
+import com.vidrieriachaloreyes.myappcrudsqlite.Business.ConsultarListaViewActivity;
 import com.vidrieriachaloreyes.myappcrudsqlite.Business.RegistrerActivity;
 import com.vidrieriachaloreyes.myappcrudsqlite.SQLite.ConexionSQLiteHelper;
 
@@ -48,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ConsultaComboActivity.class));
+            }
+        });
+
+        btnListView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ConsultarListaViewActivity.class));
             }
         });
 
