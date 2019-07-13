@@ -78,8 +78,7 @@ public class ConsultaComboActivity extends AppCompatActivity {
         SQLiteDatabase db = conn.getReadableDatabase();
         Usuario persona = null;
         personasList = new ArrayList<Usuario>();
-        //select * from usuarios
-        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLA_USUARIO, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLA_USUARIO, null);    //select * from usuarios
         while (cursor.moveToNext()) {
             persona = new Usuario();
             persona.setId(cursor.getInt(0));
