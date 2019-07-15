@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Business.DetalleUsuarioActivity"></activity>
-        <activity android:name=".Business.ConsultarListaViewActivity">
-
-        </activity>
+        <activity android:name=".Business.DetalleMascotaActivity"></activity>
+        <activity android:name=".Business.ListaMascotaActivity" />
+        <activity android:name=".Business.RegistroMascotaActivity" />
+        <activity android:name=".Business.DetalleUsuarioActivity" />
+        <activity android:name=".Business.ConsultarListaViewActivity" />
         <activity android:name=".Business.ConsultaComboActivity" />
         <activity android:name=".Business.ConsultaActivity" />
         <activity android:name=".Business.RegistrerActivity" />
@@ -22,7 +23,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

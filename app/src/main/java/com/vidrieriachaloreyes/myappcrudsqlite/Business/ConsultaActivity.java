@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.vidrieriachaloreyes.myappcrudsqlite.R;
 import com.vidrieriachaloreyes.myappcrudsqlite.SQLite.ConexionSQLiteHelper;
 
+import static com.vidrieriachaloreyes.myappcrudsqlite.Business.Utilidades.db_version;
+
 public class ConsultaActivity extends AppCompatActivity {
 
 
@@ -28,7 +30,7 @@ public class ConsultaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta);
 
-        conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, 1);
+        conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, db_version);
 
 
         campoId = findViewById(R.id.documentoID);

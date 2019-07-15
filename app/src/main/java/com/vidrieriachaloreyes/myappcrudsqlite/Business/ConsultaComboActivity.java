@@ -17,6 +17,8 @@ import com.vidrieriachaloreyes.myappcrudsqlite.SQLite.Usuario;
 
 import java.util.ArrayList;
 
+import static com.vidrieriachaloreyes.myappcrudsqlite.Business.Utilidades.db_version;
+
 public class ConsultaComboActivity extends AppCompatActivity {
 
 
@@ -33,7 +35,7 @@ public class ConsultaComboActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta_combo);
 
-        conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, 1);
+        conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, db_version);
 
 
         comboPersonas = (Spinner) findViewById(R.id.comboPersonas);

@@ -9,12 +9,18 @@ import android.widget.Button;
 import com.vidrieriachaloreyes.myappcrudsqlite.Business.ConsultaActivity;
 import com.vidrieriachaloreyes.myappcrudsqlite.Business.ConsultaComboActivity;
 import com.vidrieriachaloreyes.myappcrudsqlite.Business.ConsultarListaViewActivity;
+import com.vidrieriachaloreyes.myappcrudsqlite.Business.ListaMascotaActivity;
 import com.vidrieriachaloreyes.myappcrudsqlite.Business.RegistrerActivity;
+import com.vidrieriachaloreyes.myappcrudsqlite.Business.RegistroMascotaActivity;
 import com.vidrieriachaloreyes.myappcrudsqlite.SQLite.ConexionSQLiteHelper;
+
+import static com.vidrieriachaloreyes.myappcrudsqlite.Business.Utilidades.db_version;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnRegistrar, btnConsultar, btnspinner, btnListView;
+    Button btnRegistrarU, btnConsultar, btnspinner, btnListView;
+
+    Button btnRegistrarM, btnListaMascota;
 
 
     @Override
@@ -22,19 +28,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, 1);
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, db_version);
 
-        btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnRegistrarU = findViewById(R.id.btnRegistrarU);
+        btnRegistrarM = findViewById(R.id.btnRegistrarM);
         btnConsultar = findViewById(R.id.btnConsultarMain);
         btnspinner = findViewById(R.id.btnSpinner);
         btnListView = findViewById(R.id.btnListView);
+        btnListaMascota = findViewById(R.id.btnListaMascota);
 
 
-        btnRegistrar.setOnClickListener(new View.OnClickListener() {
+        btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(MainActivity.this, RegistrerActivity.class));
+            }
+        });
+
+        btnRegistrarM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, RegistroMascotaActivity.class));
             }
         });
 
@@ -56,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ConsultarListaViewActivity.class));
+            }
+        });
+
+        btnListaMascota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ListaMascotaActivity.class));
             }
         });
 

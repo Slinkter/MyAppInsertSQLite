@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.vidrieriachaloreyes.myappcrudsqlite.R;
 import com.vidrieriachaloreyes.myappcrudsqlite.SQLite.ConexionSQLiteHelper;
 
+import static com.vidrieriachaloreyes.myappcrudsqlite.Business.Utilidades.db_version;
+
 public class RegistrerActivity extends AppCompatActivity {
 
     EditText campoID, campoNombre, campoTelefono;
@@ -41,7 +43,7 @@ public class RegistrerActivity extends AppCompatActivity {
     }
 
     private void registrarUsuariosql() {
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, 1);
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, db_version);
         SQLiteDatabase db = conn.getWritableDatabase();
 
         //insert into usuario (id,nombre,telefono) values (123 , 'dasd','543534')
@@ -57,7 +59,7 @@ public class RegistrerActivity extends AppCompatActivity {
 
 
     public void registrarUsuarios() {
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, 1);
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, db_version);
         SQLiteDatabase db = conn.getWritableDatabase();
         try {
             ContentValues values = new ContentValues();
@@ -65,7 +67,7 @@ public class RegistrerActivity extends AppCompatActivity {
             values.put(Utilidades.CAMPO_NOMBRE, campoNombre.getText().toString());
             values.put(Utilidades.CAMPO_TELEFONO, campoTelefono.getText().toString());
 
-            Long idResultante = db.insert(Utilidades.tabla, Utilidades.CAMPO_ID, values);
+            Long idResultante = db.insert(Utilidades.CREATE_TABLA_USUARIO, Utilidades.CAMPO_ID, values);
             Toast.makeText(getApplicationContext(), "id Registro " + idResultante, Toast.LENGTH_SHORT).show();
             db.close();
 

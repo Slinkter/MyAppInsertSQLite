@@ -5,12 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Business.ConsultarListaViewActivity">
+    tools:context=".Business.ListaMascotaActivity">
 
     <ListView
-        android:id="@+id/listViewPersonas"
+        android:id="@+id/listViewMascota"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
-
 
 </RelativeLayout>

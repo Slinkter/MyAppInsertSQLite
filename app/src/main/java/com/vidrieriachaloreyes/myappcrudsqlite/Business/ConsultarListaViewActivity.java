@@ -17,6 +17,8 @@ import com.vidrieriachaloreyes.myappcrudsqlite.SQLite.Usuario;
 
 import java.util.ArrayList;
 
+import static com.vidrieriachaloreyes.myappcrudsqlite.Business.Utilidades.db_version;
+
 public class ConsultarListaViewActivity extends AppCompatActivity {
 
     ListView listViewPersonas;
@@ -29,7 +31,7 @@ public class ConsultarListaViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consultar_lista_view);
 
-        conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, 1);
+        conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, db_version);
 
 
         listViewPersonas = findViewById(R.id.listViewPersonas);

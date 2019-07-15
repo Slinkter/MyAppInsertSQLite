@@ -11,28 +11,40 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnRegistrar"
+        android:id="@+id/btnRegistrarU"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Registrar" />
+        android:text="Registrar Usuarios" />
+
+    <Button
+        android:id="@+id/btnRegistrarM"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Registrar Mascota" />
 
     <Button
         android:id="@+id/btnConsultarMain"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Consultar" />
+        android:text="Consultar Usuario" />
 
     <Button
         android:id="@+id/btnSpinner"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Spinner" />
+        android:text="Consultar liista Usuario con Spinner" />
 
     <Button
         android:id="@+id/btnListView"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="ListView" />
+        android:text="Consultar liista Usuario con Listview" />
+
+    <Button
+        android:id="@+id/btnListaMascota"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Consultar Lista Mascota" />
 
 </LinearLayout>
